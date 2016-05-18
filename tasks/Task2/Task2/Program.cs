@@ -15,11 +15,12 @@ namespace Task2
             Computer c = new Computer(699, 2);
             Computer d = new Computer(799, 3);
 
-            Console.WriteLine($"Der Preis von Computer a  ist {a.Preis} EURO, ihn gibt es {a.Anzahl} mal und der Gesamtpreis dafür ist {a.Endpreis()} ");
-            Console.WriteLine($"Der Preis von Computer b  ist {b.Preis} EURO, ihn gibt es {b.Anzahl} mal und der Gesamtpreis dafür ist {b.Endpreis()} ");
-            Console.WriteLine($"Der Preis von Computer c  ist {c.Preis} EURO, ihn gibt es {c.Anzahl} mal und der Gesamtpreis dafür ist {c.Endpreis()} ");
-            Console.WriteLine($"Der Preis von Computer d  ist {d.Preis} EURO, ihn gibt es {d.Anzahl} mal und der Gesamtpreis dafür ist {d.Endpreis()} ");
+            Console.WriteLine($"Der Preis für das Servicepaket für Computer a  ist {a.Preis} EURO, und wird an {a.Anzahl} Computer(n) ausgeführt und der Gesamtpreis dafür ist {a.Endpreis()} ");
+            Console.WriteLine($"Der Preis für das Servicepaket für Computer b  ist {b.Preis} EURO, und wird an {b.Anzahl} Computer(n) ausgeführt und der Gesamtpreis dafür ist {b.Endpreis()} ");
+            Console.WriteLine($"Der Preis für das Servicepaket für Computer c  ist {c.Preis} EURO, und wird an {c.Anzahl} Computer(n) ausgeführt und der Gesamtpreis dafür ist {c.Endpreis()} ");
+            Console.WriteLine($"Der Preis für das Servicepaket für Computer d  ist {d.Preis} EURO, und wird an {d.Anzahl} Computer(n) ausgeführt und der Gesamtpreis dafür ist {d.Endpreis()} ");
 
+            
         }
     }
 }
