@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    public interface Reparaturgerät
+    public interface IGerät
     {
         //Servicepaketbeschreibung
-        string Geräteservicepaket { get; }
-
-        decimal GetServicepreis(Preisliste Preis);
+        string Besitzername { get; }
                 
+        double Gerätepreis { get; }
+        
     }
 }

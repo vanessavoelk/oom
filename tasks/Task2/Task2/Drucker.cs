@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    public class Computer : IGerät
+    class Drucker : IGerät
     {
         public int m_anzahl;
 
         public double m_gerätepreis;
-        private double m_Umsatz; 
+        private double m_Umsatz;
         public string m_besitzername;
 
         private double Umsatz
@@ -41,10 +41,10 @@ namespace Task2
             if (string.IsNullOrWhiteSpace(Nachname)) throw new ArgumentException("Familienname darf nicht leer sein!");
             m_besitzername = Nachname;
         }
-       
-         public double Gerätepreis
+
+        public double Gerätepreis
         {
-            get 
+            get
             {
                 return m_gerätepreis;
             }
@@ -73,17 +73,12 @@ namespace Task2
             return (m_anzahl * m_gerätepreis);
         }
 
-        public void Servicepaket(string Paketname)
+        
+        public Drucker(double newm_servicepreis, int newm_anzahl)
         {
-            Console.WriteLine($"Mein Computer bekommt das Servicepaket " + Paketname);
-            
-        }
-
-        public Computer(double newm_gerätepreis, int newm_anzahl)
-        {
-            if (newm_gerätepreis < 0) throw new ArgumentOutOfRangeException("Preis kann nicht negativ werden!");
+            if (newm_servicepreis < 0) throw new ArgumentOutOfRangeException("Preis kann nicht negativ werden!");
             if (newm_anzahl < 0) throw new ArgumentOutOfRangeException("Anzahl kann nicht negativ werden!");
-            m_gerätepreis = newm_gerätepreis;
+            m_gerätepreis = newm_servicepreis;
             m_anzahl = newm_anzahl;
         }
     }
