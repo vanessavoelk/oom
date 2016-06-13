@@ -8,7 +8,6 @@ namespace Task2
 {
     public interface IGerät
     {
-        //Servicepaketbeschreibung
         string Besitzername { get; }
                 
         double Gerätepreis { get; }

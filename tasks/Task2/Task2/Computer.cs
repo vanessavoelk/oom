@@ -8,18 +8,18 @@ namespace Task2
 {
     public class Computer : IGerät
     {
-        public int m_anzahl;
+        private int anzahl;
 
-        public double m_gerätepreis;
-        private double m_Umsatz; 
-        public string m_besitzername;
+        private double gerätepreis;
+        private double umsatz; 
+        private string besitzername;
 
         private double Umsatz
         {
             get
             {
-                m_Umsatz = m_gerätepreis / 1.2;
-                return m_Umsatz;
+                umsatz = gerätepreis / 1.2;
+                return umsatz;
             }
         }
 
@@ -27,31 +27,27 @@ namespace Task2
         {
             get
             {
-                return m_besitzername;
+                return besitzername;
             }
             set
             {
-                if (string.IsNullOrWhiteSpace(m_besitzername)) throw new ArgumentException("Familienname darf nicht leer sein!");
-                m_besitzername = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Familienname darf nicht leer sein!");
+                besitzername = value;
             }
         }
 
-        public void Besitzerändern(string Nachname)
-        {
-            if (string.IsNullOrWhiteSpace(Nachname)) throw new ArgumentException("Familienname darf nicht leer sein!");
-            m_besitzername = Nachname;
-        }
+        
        
          public double Gerätepreis
         {
             get 
             {
-                return m_gerätepreis;
+                return gerätepreis;
             }
             set
             {
                 if (value < 0) throw new Exception("Preis kann nicht negativ sein!");
-                m_gerätepreis = value;
+                gerätepreis = value;
             }
         }
 
@@ -59,18 +55,24 @@ namespace Task2
         {
             get
             {
-                return m_anzahl;
+                return anzahl;
             }
             set
             {
                 if (value < 0) throw new Exception("Anzahl kann nicht negativ sein!");
-                m_anzahl = value;
+                anzahl = value;
             }
+        }
+
+        public void Besitzerändern(string Nachname)
+        {
+            if (string.IsNullOrWhiteSpace(Nachname)) throw new ArgumentException("Familienname darf nicht leer sein!");
+            besitzername = Nachname;
         }
 
         public double Endpreis()
         {
-            return (m_anzahl * m_gerätepreis);
+            return (anzahl * gerätepreis);
         }
 
         public void Servicepaket(string Paketname)
@@ -78,13 +80,17 @@ namespace Task2
             Console.WriteLine($"Mein Computer bekommt das Servicepaket " + Paketname);
             
         }
-
-        public Computer(double newm_gerätepreis, int newm_anzahl)
+        
+        
+      
+        public Computer(double Gerätepreis, int Anzahl, string Besitzername)
         {
-            if (newm_gerätepreis < 0) throw new ArgumentOutOfRangeException("Preis kann nicht negativ werden!");
-            if (newm_anzahl < 0) throw new ArgumentOutOfRangeException("Anzahl kann nicht negativ werden!");
-            m_gerätepreis = newm_gerätepreis;
-            m_anzahl = newm_anzahl;
+            if (Gerätepreis < 0) throw new ArgumentOutOfRangeException("Preis kann nicht negativ werden!");
+            if (Anzahl < 0) throw new ArgumentOutOfRangeException("Anzahl kann nicht negativ werden!");
+            if(string.IsNullOrWhiteSpace(Besitzername)) throw new ArgumentException("Familienname darf nicht leer sein!");
+            gerätepreis = Gerätepreis;
+            anzahl = Anzahl;
+            besitzername = Besitzername;
         }
     }
 }

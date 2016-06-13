@@ -12,7 +12,7 @@ namespace Task2
 
         public void CanCreateComputer()
         {
-            var x = new Computer(399, 1);
+            var x = new Computer(399, 1, "Huber");
             Assert.IsTrue(x.Gerätepreis == 399);
             Assert.IsTrue(x.Anzahl == 1);
         }
@@ -20,7 +20,7 @@ namespace Task2
         [Test]
         public void CanCreateDrucker()
         {
-            var x = new Drucker(89, 2);
+            var x = new Drucker(89, 2, "Huber");
             Assert.IsTrue(x.Gerätepreis == 89);
             Assert.IsTrue(x.Anzahl == 2);
         }
@@ -31,7 +31,7 @@ namespace Task2
         {
             Assert.Catch(() =>
             {
-                var x = new Computer(-100, 1);
+                var x = new Computer(-100, 1, "Huber");
             });
         }
 
@@ -41,7 +41,7 @@ namespace Task2
         {
             Assert.Catch(() =>
             {
-                var x = new Computer(100, -1);
+                var x = new Computer(100, -1, "Huber");
             });
         }
 
@@ -51,7 +51,7 @@ namespace Task2
         {
             Assert.Catch(() =>
             {
-                var x = new Computer(-100, 1);
+                var x = new Computer(-100, 1, "Huber");
             });
         }
 
@@ -61,7 +61,7 @@ namespace Task2
         {
             Assert.Catch(() =>
             {
-                var x = new Computer(100, -1);
+                var x = new Computer(100, -1, "Huber");
             });
         }
 
@@ -69,7 +69,7 @@ namespace Task2
         [Test]
         public void CanChangeNameOfComputer()
         {
-            var x = new Computer(399,1);
+            var x = new Computer(399,1, "Hans");
             x.Besitzerändern("Huber");
             Assert.IsTrue(x.Besitzername == "Huber");
             
@@ -78,7 +78,7 @@ namespace Task2
         [Test]
         public void CanChangeNameOfDrucker()
         {
-            var x = new Drucker(89, 1);
+            var x = new Drucker(89, 1, "Huber");
             x.Besitzerändern("Mueller");
             Assert.IsTrue(x.Besitzername == "Mueller");
 
@@ -87,7 +87,7 @@ namespace Task2
         [Test]
         public void CanCalculateEndpreisOfComputer()
         {
-            var x = new Computer(399, 1);
+            var x = new Computer(399, 1,"Huber");
             
             Assert.IsTrue(x.Endpreis()==(399*1));
 
@@ -96,7 +96,7 @@ namespace Task2
         [Test]
         public void CanCalculateEndpreisOfDrucker()
         {
-            var x = new Drucker(89, 2);
+            var x = new Drucker(89, 2, "Huber");
 
             Assert.IsTrue(x.Endpreis() == (89 * 2));
 
